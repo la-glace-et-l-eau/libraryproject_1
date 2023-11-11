@@ -16,15 +16,10 @@ include(cmake/variables.cmake)
 
 # ---- Declare library ----
 
-
-
-
-
-
 add_library(libraryproject_libraryproject INTERFACE)
 add_library(libraryproject::libraryproject ALIAS libraryproject_libraryproject)
 
-set_target_properties(libraryproject_libraryproject PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(libraryproject_libraryproject PROPERTIES LINKER_LANGUAGE cxx_std_20)
 
 # set(libraryproject_SOURCE include/libraryproject/libraryproject.hpp)
 # target_link_libraries(libraryproject_libraryproject INTERFACE ${libraryproject_SOURCE})

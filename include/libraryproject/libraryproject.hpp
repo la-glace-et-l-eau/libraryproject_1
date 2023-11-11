@@ -13,6 +13,10 @@ inline auto name() -> std::string
   return fmt::format("{}", "libraryproject");
 }
 
+void printk() {
+  printf("##### k !\n");
+}
+
 #if defined(__GNUC__)
 // Ensure we get the 64-bit variants of the CRT's file I/O calls
 #ifndef _FILE_OFFSET_BITS

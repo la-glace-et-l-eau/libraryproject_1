@@ -8,7 +8,7 @@ project(
     VERSION 0.1.0
     DESCRIPTION "good 2"
     HOMEPAGE_URL "https://example.com/"
-    LANGUAGES NONE
+    LANGUAGES CXX
 )
 
 include(cmake/project-is-top-level.cmake)
@@ -16,8 +16,18 @@ include(cmake/variables.cmake)
 
 # ---- Declare library ----
 
+
+
+
+
+
 add_library(libraryproject_libraryproject INTERFACE)
 add_library(libraryproject::libraryproject ALIAS libraryproject_libraryproject)
+
+set_target_properties(libraryproject_libraryproject PROPERTIES LINKER_LANGUAGE CXX)
+
+# set(libraryproject_SOURCE include/libraryproject/libraryproject.hpp)
+# target_link_libraries(libraryproject_libraryproject INTERFACE ${libraryproject_SOURCE})
 
 set_property(
     TARGET libraryproject_libraryproject PROPERTY
@@ -35,6 +45,7 @@ target_compile_features(libraryproject_libraryproject INTERFACE cxx_std_20)
 find_package(fmt REQUIRED)
 target_link_libraries(libraryproject_libraryproject INTERFACE fmt::fmt)
 target_link_libraries(libraryproject_libraryproject INTERFACE miniz)
+
 
 # ---- Install rules ----
 
@@ -54,3 +65,6 @@ elseif(NOT PROJECT_IS_TOP_LEVEL)
 endif()
 
 include(cmake/dev-mode.cmake)
+
+
+

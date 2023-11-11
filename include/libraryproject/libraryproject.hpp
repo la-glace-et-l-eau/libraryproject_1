@@ -45,7 +45,7 @@ static const char *s_pTest_str =
 
 static const char *s_pComment = "This is a comment";
 
-int main(int argc, char *argv[])
+int main_function(int argc, char *argv[])
 {
   int i, sort_iter;
   mz_bool status;
